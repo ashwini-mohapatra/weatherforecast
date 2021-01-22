@@ -22,8 +22,6 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class HomeFragment : Fragment() {
 
-    private lateinit var linearLayoutManager: LinearLayoutManager
-    private lateinit var recyclerView : RecyclerView
     lateinit var link:String
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,9 +30,6 @@ class HomeFragment : Fragment() {
         // Inflate the layout for this fragment
         val v:View= inflater.inflate(R.layout.fragment_home, container, false)
 
-        recyclerView=v.findViewById(R.id.recyclerview)
-        linearLayoutManager = LinearLayoutManager(activity)
-        recyclerView.layoutManager = linearLayoutManager
 
         var loggingInterceptor: HttpLoggingInterceptor = HttpLoggingInterceptor()
         loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY)

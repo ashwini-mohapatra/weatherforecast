@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="PrimaryColor">#000080</color>
+    <color name="grey_10">#e6e6e6</color>
+    <color name="grey_60">#666666</color>
+
 </resources>
