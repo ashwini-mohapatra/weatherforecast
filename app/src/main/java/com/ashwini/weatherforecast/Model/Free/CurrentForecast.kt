@@ -8,7 +8,7 @@ data class CurrentForecast(
     @SerializedName("coord")
     val coord: Coord,
     @SerializedName("weather")
-    val weather: Weather,
+    val weather: ArrayList<Weather>,
     @SerializedName("base")
     val base: String,
     @SerializedName("main")

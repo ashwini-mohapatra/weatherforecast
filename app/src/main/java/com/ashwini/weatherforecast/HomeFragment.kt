@@ -60,7 +60,6 @@ class HomeFragment : Fragment() {
                         if(response.body()!!.cod ==200){
                             Log.i("Response","Success")
                             val apiModel0: CurrentForecast? =response.body()
-                            Toast.makeText(activity, apiModel0?.cod!!,Toast.LENGTH_LONG).show()
                             Toast.makeText(activity,"API Fetch Successful",Toast.LENGTH_LONG).show()
                         }
                     }
