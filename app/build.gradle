@@ -4,6 +4,14 @@ plugins {
 }
 
 android {
+    signingConfigs {
+        AndroidSigningKey {
+            storeFile file(kotlin_version)
+            storePassword kotlin_version
+            keyAlias kotlin_version
+            keyPassword kotlin_version
+        }
+    }
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
 
