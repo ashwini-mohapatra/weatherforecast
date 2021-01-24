@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.cardview.widget.CardView
 import com.ashwini.weatherforecast.Model.Free.CurrentForecast
@@ -23,6 +24,19 @@ class HomeFragment : Fragment() {
 
     lateinit var link:String
     lateinit var card:CardView
+    lateinit var t1: TextView
+    lateinit var t2: TextView
+    lateinit var t3: TextView
+    lateinit var t4: TextView
+    lateinit var t5: TextView
+    lateinit var t6: TextView
+    lateinit var t7: TextView
+    lateinit var t8: TextView
+    lateinit var t9: TextView
+    lateinit var t10: TextView
+    lateinit var t11: TextView
+    lateinit var t12: TextView
+    lateinit var t13: TextView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -38,6 +52,20 @@ class HomeFragment : Fragment() {
 
         val e1:EditText=v.findViewById(R.id.editTextTextPersonName)
         val b1:Button=v.findViewById(R.id.button)
+
+        t1=v.findViewById(R.id.latitude);
+        t2=v.findViewById(R.id.longitude);
+        t3=v.findViewById(R.id.sky);
+        t4=v.findViewById(R.id.temperature);
+        t5=v.findViewById(R.id.feelslike);
+        t6=v.findViewById(R.id.temperaturerange);
+        t7=v.findViewById(R.id.pressure);
+        t8=v.findViewById(R.id.humidity);
+        t9=v.findViewById(R.id.wind1);
+        t10=v.findViewById(R.id.wind2);
+        t11=v.findViewById(R.id.clouds);
+        t12=v.findViewById(R.id.sunrise);
+        t13=v.findViewById(R.id.sunset);
 
         card=v.findViewById(R.id.card)
 
@@ -61,6 +89,7 @@ class HomeFragment : Fragment() {
                             Log.i("Response","Success")
                             val apiModel0: CurrentForecast? =response.body()
                             Toast.makeText(activity,"API Fetch Successful",Toast.LENGTH_LONG).show()
+
                         }
                     }
 
