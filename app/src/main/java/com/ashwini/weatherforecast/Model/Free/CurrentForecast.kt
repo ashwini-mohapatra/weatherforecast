@@ -31,5 +31,4 @@ data class CurrentForecast(
     val name:String,
     @SerializedName("cod")
     val cod:Int
-
     )

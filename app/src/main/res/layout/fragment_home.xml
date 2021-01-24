@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeFragment">
+    tools:context=".Screens.HomeFragment">
 
 
     <ScrollView
@@ -53,8 +53,7 @@
                 android:textStyle="bold"
                 android:textSize="25sp"
                 android:layout_marginTop="20dp"
-                android:background="#ffffff"
-                android:textColor="#000080"
+                android:textColor="#ffffff"
                 android:layout_gravity="center_horizontal" />
 
             <LinearLayout
@@ -89,7 +88,7 @@
                 android:id="@+id/card"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/spacing_medium"
+                android:layout_marginBottom="@dimen/spacing_large"
                 android:layout_marginLeft="@dimen/spacing_middle"
                 android:layout_marginRight="@dimen/spacing_middle"
                 android:visibility="visible"
@@ -145,7 +144,7 @@
                                 android:layout_marginLeft="10dp"
                                 android:layout_marginStart="10dp"
                                 android:layout_marginEnd="10dp"
-                                android:text="June 1, 2015"
+                                android:text="Coordinates"
                                 android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
                                 android:textColor="@color/grey_60" />
 
@@ -186,7 +185,7 @@
                                 android:layout_marginLeft="10dp"
                                 android:layout_marginStart="10dp"
                                 android:layout_marginEnd="10dp"
-                                android:text="June 1, 2015"
+                                android:text="Coordinates"
                                 android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
                                 android:textColor="@color/grey_60" />
 
@@ -227,7 +226,7 @@
                                 android:layout_marginLeft="10dp"
                                 android:layout_marginStart="10dp"
                                 android:layout_marginEnd="10dp"
-                                android:text="June 1, 2015"
+                                android:text="Sky Condition"
                                 android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
                                 android:textColor="@color/grey_60" />
 
@@ -256,7 +255,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:gravity="center_vertical"
-                                android:text="Temperatur."
+                                android:text="Temp.(C)"
                                 android:layout_marginRight="10dp"
                                 android:layout_marginLeft="10dp"
                                 android:layout_marginStart="10dp"
@@ -276,7 +275,7 @@
                                 android:layout_marginLeft="10dp"
                                 android:layout_marginStart="10dp"
                                 android:layout_marginEnd="10dp"
-                                android:text="June 1, 2015"
+                                android:text="Celcius"
                                 android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
                                 android:textColor="@color/grey_60" />
 
@@ -297,7 +296,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:gravity="center_vertical"
-                                android:text="Feels Like"
+                                android:text="Feels Lik.(C)"
                                 android:textAlignment="center"
                                 android:layout_marginRight="10dp"
                                 android:layout_marginLeft="10dp"
@@ -317,7 +316,7 @@
                                 android:layout_marginLeft="10dp"
                                 android:layout_marginStart="10dp"
                                 android:layout_marginEnd="10dp"
-                                android:text="June 1, 2015"
+                                android:text="Feel Temp"
                                 android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
                                 android:textColor="@color/grey_60" />
 
@@ -338,7 +337,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:gravity="center_vertical"
-                                android:text="Temp.Ran."
+                                android:text="Temp.R.(C)"
                                 android:layout_marginRight="10dp"
                                 android:layout_marginLeft="10dp"
                                 android:layout_marginStart="10dp"
@@ -358,7 +357,7 @@
                                 android:layout_marginLeft="10dp"
                                 android:layout_marginStart="10dp"
                                 android:layout_marginEnd="10dp"
-                                android:text="June 1, 2015"
+                                android:text="TemperatureR."
                                 android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
                                 android:textColor="@color/grey_60" />
 
@@ -407,7 +406,7 @@
                                 android:layout_marginLeft="10dp"
                                 android:layout_marginStart="10dp"
                                 android:layout_marginEnd="10dp"
-                                android:text="June 1, 2015"
+                                android:text="Pascals"
                                 android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
                                 android:textColor="@color/grey_60" />
 
@@ -447,7 +446,7 @@
                                 android:layout_marginLeft="10dp"
                                 android:layout_marginStart="10dp"
                                 android:layout_marginEnd="10dp"
-                                android:text="June 1, 2015"
+                                android:text="Percentage"
                                 android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
                                 android:textColor="@color/grey_60" />
 
@@ -551,7 +550,7 @@
                                 android:layout_marginLeft="10dp"
                                 android:layout_marginStart="10dp"
                                 android:layout_marginEnd="10dp"
-                                android:text="June 1, 2015"
+                                android:text="Number"
                                 android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
                                 android:textColor="@color/grey_60" />
 
@@ -591,7 +590,7 @@
                                 android:layout_marginLeft="10dp"
                                 android:layout_marginStart="10dp"
                                 android:layout_marginEnd="10dp"
-                                android:text="June 1, 2015"
+                                android:text="Timing"
                                 android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
                                 android:textColor="@color/grey_60" />
 
@@ -631,20 +630,7 @@
                                 android:layout_marginLeft="10dp"
                                 android:layout_marginStart="10dp"
                                 android:layout_marginEnd="10dp"
-                                android:text="Speed"
-                                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                                android:textColor="@color/grey_60" />
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="@dimen/spacing_small"
-                                android:gravity="center_vertical"
-                                android:textAlignment="center"
-                                android:layout_marginRight="10dp"
-                                android:layout_marginLeft="10dp"
-                                android:layout_marginStart="10dp"
-                                android:layout_marginEnd="10dp"
-                                android:text="Degree"
+                                android:text="Timing"
                                 android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
                                 android:textColor="@color/grey_60" />
                         </LinearLayout>

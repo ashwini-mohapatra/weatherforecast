@@ -1,8 +1,7 @@
-package com.ashwini.weatherforecast
+package com.ashwini.weatherforecast.Authentication
 
 import android.animation.Animator
 import android.app.Activity
-import android.app.Activity.RESULT_OK
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -12,16 +11,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.Toast
-import com.google.android.play.core.appupdate.AppUpdateInfo
+import com.ashwini.weatherforecast.Screens.HomeFragment
+import com.ashwini.weatherforecast.R
 import com.google.android.play.core.appupdate.AppUpdateManager
 import com.google.android.play.core.appupdate.AppUpdateManagerFactory
 import com.google.android.play.core.install.InstallStateUpdatedListener
 import com.google.android.play.core.install.model.ActivityResult
 import com.google.android.play.core.install.model.AppUpdateType
 import com.google.android.play.core.install.model.UpdateAvailability
-import com.google.android.play.core.ktx.startUpdateFlowForResult
-import com.google.android.play.core.tasks.Task
-import kotlin.math.log
 
 class SplashFragment : Fragment() {
 
@@ -64,7 +61,9 @@ class SplashFragment : Fragment() {
 //                    } else {
 //                        Log.d(TAG, "No Update available")
 //                        listener?.let { appUpdateManager?.unregisterListener(it) }
-                        activity!!.supportFragmentManager.beginTransaction().replace(R.id.mainframe,HomeFragment()).commit()
+                        activity!!.supportFragmentManager.beginTransaction().replace(R.id.mainframe,
+                            HomeFragment()
+                        ).commit()
 //                    }
 //              }
 

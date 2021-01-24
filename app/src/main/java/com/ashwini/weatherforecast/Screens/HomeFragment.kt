@@ -1,5 +1,6 @@
-package com.ashwini.weatherforecast
+package com.ashwini.weatherforecast.Screens
 
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -10,8 +11,11 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.cardview.widget.CardView
 import com.ashwini.weatherforecast.Model.Free.CurrentForecast
+import com.ashwini.weatherforecast.R
+import com.ashwini.weatherforecast.WeatherAPI
 import retrofit2.Call
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -69,6 +73,8 @@ class HomeFragment : Fragment() {
 
         card=v.findViewById(R.id.card)
 
+        //This uses Open Weather API
+
         b1.setOnClickListener(object: View.OnClickListener{
             override fun onClick(v: View?) {
                 var s1:String=e1.text.toString()
@@ -77,19 +83,65 @@ class HomeFragment : Fragment() {
                 val retrofit= Retrofit.Builder().baseUrl(link).addConverterFactory(
                     GsonConverterFactory.create()).client(okHttpClient).build()
                 service=retrofit.create(WeatherAPI::class.java)
-                var call=service.getForecast(s1,"9c385d813f4dbdd0ae2b011dd2fd7caf")
+                var call=service.getCurrentWeather(s1,"9c385d813f4dbdd0ae2b011dd2fd7caf")
                 call.enqueue(object: Callback<CurrentForecast>{
                     override fun onFailure(call: Call<CurrentForecast>, t: Throwable) {
                         Log.i("Response","Failure")
                         Toast.makeText(activity,"Failure to Fetch API",Toast.LENGTH_SHORT).show()
                     }
 
+                    @RequiresApi(Build.VERSION_CODES.O)
                     override fun onResponse(call: Call<CurrentForecast>, response: Response<CurrentForecast>) {
                         if(response.body()!!.cod ==200){
                             Log.i("Response","Success")
                             val apiModel0: CurrentForecast? =response.body()
-                            Toast.makeText(activity,"API Fetch Successful",Toast.LENGTH_LONG).show()
 
+
+                            t1.setText(apiModel0?.coord?.lat?.toBigDecimal()?.toPlainString())
+                            t2.setText(apiModel0?.coord?.lon?.toBigDecimal()?.toPlainString())
+                            t3.setText(apiModel0?.weather?.get(0)?.main)
+
+                            var tmean:Double= apiModel0!!.main.temp
+                            var tmeanc:Double=tmean-273.15
+                            t4.setText(String.format("%.2f",tmeanc))
+
+                            var tfeel:Double= apiModel0!!.main.feels_like
+                            var tfeelc:Double=tfeel-273.15
+                            t5.setText(String.format("%.2f",tfeelc))
+
+                            var x1:Double=apiModel0?.main?.temp_min
+                            var x2:Double=apiModel0?.main?.temp_max
+                            x1-=273.15
+                            x2-=273.15
+                            val x:String=String.format("%.2f",x1)+"-"+String.format("%.2f",x2)
+                            t6.setText(x)
+
+                            val pressure:String=apiModel0?.main?.pressure.toBigDecimal()?.toPlainString()+ " hPa"
+                            t7.setText(pressure)
+
+                            val hint:String=apiModel0?.main?.hint.toBigDecimal()?.toPlainString()+ " %"
+                            t8.setText(hint)
+
+                            val speed:String="Speed: "+apiModel0?.wind?.speed?.toBigDecimal()?.toPlainString()+" m/s"
+                            t9.setText(speed)
+
+                            val degree:String="Degree: "+apiModel0?.wind?.deg?.toBigDecimal()?.toPlainString()+" deg."
+                            t10.setText(degree)
+
+                            val cloud:String=apiModel0?.clouds?.all.toBigDecimal()?.toPlainString()+ " %"
+                            t11.setText(cloud)
+
+                            val sunrise:String=java.time.format.DateTimeFormatter.ISO_INSTANT
+                                .format(java.time.Instant.ofEpochSecond(apiModel0?.sys?.sunrise))
+                            var sunrise1:String=sunrise.replace("T","",true)
+                            var sunrise2=sunrise1.replace("Z","",true)
+                            t12.setText(sunrise2)
+
+                            val sunset:String=java.time.format.DateTimeFormatter.ISO_INSTANT
+                                .format(java.time.Instant.ofEpochSecond(apiModel0?.sys?.sunset))
+                            var sunset1=sunrise.replace("T","",true)
+                            var sunset2=sunset1.replace("Z","",true)
+                            t13.setText(sunset2)
                         }
                     }
 
